@@ -1,0 +1,65 @@
+@layer components {
+  /* ---------- LIGHT THEME SWITCH ---------- */
+  
+  [data-theme="custom-light"] .switch__control {
+    background-color: color-mix(in srgb, var(--background) 85%, black) !important;
+    transition: all 0.2s ease;
+  }
+  
+  [data-theme="custom-light"] .switch__control[data-selected="true"] {
+    background-color: color-mix(in srgb, var(--background) 85%, black) !important;
+  }
+  
+  [data-theme="custom-light"] .switch__thumb {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease;
+  }
+  
+  [data-theme="custom-light"] .switch__control:hover .switch__thumb,
+  [data-theme="custom-light"] .switch__control[data-hovered="true"] .switch__thumb {
+    background-color: color-mix(in srgb, var(--background) 95%, var(--foreground)) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    transform: scale(1.05);
+  }
+  
+  /* ---------- DARK THEME SWITCH ---------- */
+  
+  [data-theme="custom-dark"] .switch__control {
+    background-color: color-mix(in srgb, var(--background) 85%, white) !important;
+    transition: all 0.2s ease;
+  }
+  
+  [data-theme="custom-dark"] .switch__control[data-selected="true"] {
+    background-color: color-mix(in srgb, var(--background) 85%, white) !important;
+  }
+  
+  [data-theme="custom-dark"] .switch__thumb {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s ease;
+  }
+  
+  [data-theme="custom-dark"] .switch__control:hover .switch__thumb,
+  [data-theme="custom-dark"] .switch__control[data-hovered="true"] .switch__thumb {
+    background-color: color-mix(in srgb, var(--background) 95%, var(--foreground)) !important;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1.05);
+  }
+  
+  /* ---------- SWITCH ICON STYLING ---------- */
+  .switch__icon {
+    color: var(--foreground) !important;
+    transition: all 0.2s ease;
+  }
+  
+  .switch__thumb {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .switch__control {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+}

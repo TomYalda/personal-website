@@ -44,7 +44,7 @@ export const options: ISourceOptions = {
       value: 120,
     },
     opacity: {
-      value: 0.4,
+      value: 0.6,
     },
     shape: {
       type: "image",

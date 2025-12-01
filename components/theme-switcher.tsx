@@ -17,14 +17,25 @@ export default function ThemeSwitcher() {
     if (!mounted) return null
 
     return (
-        <Switch
-            defaultSelected
-            color="secondary"
-            size="lg"
-            thumbIcon={({ className }) =>
-                theme === "dark" ? <Moon className={className} /> : <Sun className={className} />
-            }
-            onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-        />
+        <Switch isSelected={theme === "custom-dark"}
+            onChange={(isSelected) => setTheme(isSelected ? "custom-dark" : "custom-light")}
+            className="scale-150 ml-4"
+            size="lg">
+            {({ isSelected }) => (
+                <>
+                    <Switch.Control >
+                        <Switch.Thumb>
+                            <Switch.Icon>
+                                {isSelected ? (
+                                    <Moon className="size-3" />
+                                ) : (
+                                    <Sun className="size-3" />
+                                )}
+                            </Switch.Icon>
+                        </Switch.Thumb>
+                    </Switch.Control>
+                </>
+            )}
+        </Switch>
     )
 };

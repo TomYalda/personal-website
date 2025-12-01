@@ -1,0 +1,94 @@
+@layer base {
+  /* ---------- DEFAULT FALLBACK THEME ---------- */
+  :root {
+    --background: #e9f3ff;
+    --foreground: #364fab;
+
+    --heroui-primary: #364fab;
+    --heroui-primary-foreground: #e9f3ff;
+    --heroui-secondary: #6366f1;
+    --heroui-secondary-foreground: #e9f3ff;
+
+    --surface: #ffffff;
+    --surface-foreground: #1e293b;
+
+    --overlay: #f8fafc;
+    --overlay-foreground: #1e293b;
+
+    --muted: #f1f5f9;
+    --scrollbar: #e2e8f0;
+
+    --default: #364fab;
+    --default-foreground: #e9f3ff;
+
+    --surface-shadow: 0 1px 2px 0 #0000000d;
+    --overlay-shadow: 0 1px 3px 0 #0000001a;
+    --field-shadow: 0 0 0 1px #1018280d inset;
+  }
+
+  /* ---------- DARK THEME ---------- */
+  [data-theme="custom-dark"] {
+    color-scheme: dark;
+
+    --background: #0e1117;
+    --foreground: #4da3ff;
+
+    --heroui-primary: #4da3ff;
+    --heroui-primary-foreground: #0e1117;
+    --heroui-secondary: #a78bfa;
+    --heroui-secondary-foreground: #000000;
+
+    --surface: #1a1d23;
+    --surface-foreground: #cbd5e1;
+
+    --overlay: #16191f;
+    --overlay-foreground: #cbd5e1;
+
+    --muted: #21242a;
+    --scrollbar: #2c2f36;
+
+    --default: #4da3ff;
+    --default-foreground: #0e1117;
+
+    --surface-shadow: 0 0 0 0 transparent inset;
+    --overlay-shadow: 0 0 0 0 transparent inset;
+    --field-shadow: 0 0 0 0 transparent inset;
+  }
+
+  /* ---------- LIGHT THEME ---------- */
+  [data-theme="custom-light"] {
+    color-scheme: light;
+
+    --background: #e9f3ff;
+    --foreground: #364fab;
+
+    --heroui-primary: #364fab;
+    --heroui-primary-foreground: #e9f3ff;
+    --heroui-secondary: #6366f1;
+    --heroui-secondary-foreground: #e9f3ff;
+
+    --surface: #ffffff;
+    --surface-foreground: #1e293b;
+
+    --overlay: #f8fafc;
+    --overlay-foreground: #1e293b;
+
+    --muted: #f1f5f9;
+    --scrollbar: #e2e8f0;
+
+    --default: #364fab;
+    --default-foreground: #e9f3ff;
+
+    --surface-shadow: 0 1px 2px 0 #0000000d;
+    --overlay-shadow: 0 1px 3px 0 #0000001a;
+    --field-shadow: 0 0 0 1px #1018280d inset;
+  }
+
+  /* ---------- BODY BASE STYLING ---------- */
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}

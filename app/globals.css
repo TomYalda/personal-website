@@ -1,17 +1,7 @@
+@layer theme, base, components, utilities;
 @import "tailwindcss";
+@import "@heroui/styles";
+@import "./styling/themes.css";
+@import "./styling/components/buttons.css";
+@import "./styling/components/switch.css";
 
-:root {
-  --background: #e9f3ff;
-  --foreground: #364fab;
-}
-
-.dark {
-  --background: #0e1117;
-  --foreground: #4da3ff;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}

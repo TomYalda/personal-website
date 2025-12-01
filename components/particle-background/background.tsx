@@ -19,6 +19,8 @@ export default function Background() {
       await loadImageShape(engine);
     }).then(() => {
       setInit(true);
+    }).catch((error) => {
+      console.error("Failed to initialize particles engine:", error);
     });
   }, [])
 
@@ -30,13 +32,16 @@ export default function Background() {
 
   if (init) {
     return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={particleOptions}
-      />
+      <div className="absolute inset-0 w-full h-full">
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={particleOptions}
+          className="w-full h-full"
+        />
+      </div>
     );
   }
 
-  return <></>;
+  return <div className="absolute inset-0 w-full h-full bg-transparent">Loading particles...</div>;
 }
