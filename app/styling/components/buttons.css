@@ -1,81 +1,86 @@
 @layer components {
-  /* ---------- LIGHT THEME BUTTONS ---------- */
-  
-  /* Light Theme Primary (Default Button) */
-  [data-theme="custom-light"] .button--primary {
-    background-color: #364fab !important;
-    color: #e9f3ff !important;
-    transition: all 0.2s ease;
-  }
-  
-  [data-theme="custom-light"] .button--primary:hover,
-  [data-theme="custom-light"] .button--primary[data-hovered="true"] {
-    background-color: color-mix(in srgb, #364fab 90%, black) !important;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(54, 71, 171, 0.3);
-  }
-  
-  /* Light Theme Ghost */
-  [data-theme="custom-light"] .button--ghost {
-    background-color: transparent !important;
-    color: #364fab !important;
-    border: 1px solid #364fab !important;
-    transition: all 0.2s ease;
-  }
-  
-  [data-theme="custom-light"] .button--ghost:hover,
-  [data-theme="custom-light"] .button--ghost[data-hovered="true"] {
-    background-color: #364fab !important;
-    color: #e9f3ff !important;
-    opacity: 0.9;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(54, 71, 171, 0.2);
-  }
-  
-  /* ---------- DARK THEME BUTTONS ---------- */
-  
-  /* Dark Theme Primary (Default Button) */
-  [data-theme="custom-dark"] .button--primary {
-    background-color: #4da3ff !important;
-    color: #0e1117 !important;
-    transition: all 0.2s ease;
-  }
-  
-  [data-theme="custom-dark"] .button--primary:hover,
-  [data-theme="custom-dark"] .button--primary[data-hovered="true"] {
-    background-color: color-mix(in srgb, #4da3ff 90%, black) !important;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(77, 163, 255, 0.3);
-  }
-  
-  /* Dark Theme Ghost */
-  [data-theme="custom-dark"] .button--ghost {
-    background-color: transparent !important;
-    color: #4da3ff !important;
-    border: 1px solid #4da3ff !important;
-    transition: all 0.2s ease;
-  }
-  
-  [data-theme="custom-dark"] .button--ghost:hover,
-  [data-theme="custom-dark"] .button--ghost[data-hovered="true"] {
-    background-color: #4da3ff !important;
-    color: #0e1117 !important;
-    opacity: 0.9;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(77, 163, 255, 0.2);
-  }
-  
-  /* ---------- SECONDARY BUTTONS (using theme variables) ---------- */
-  .button--secondary {
-    background-color: var(--heroui-secondary) !important;
-    color: var(--heroui-secondary-foreground) !important;
-    transition: all 0.2s ease;
-  }
+    .button--primary,
+    .button--secondary,
+    .button--ghost {
+        transition: all 0.3s ease;
+    }
 
-  .button--secondary:hover,
-  .button--secondary[data-hovered="true"] {
-    background-color: color-mix(in srgb, var(--heroui-secondary) 90%, black) !important;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    /* ---------- LIGHT THEME BUTTONS ---------- */
+
+    /* Light Theme Primary */
+    [data-theme="custom-light"] .button--primary {
+        background-color: var(--heroui-primary);
+        color: var(--heroui-primary-foreground);
+    }
+
+    [data-theme="custom-light"] .button--primary:hover,
+    [data-theme="custom-light"] .button--primary[data-hovered="true"] {
+        background-color: color-mix(in srgb, var(--heroui-primary) 90%, black);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(54, 71, 171, 0.3);
+    }
+
+    /* Light Theme Ghost */
+    [data-theme="custom-light"] .button--ghost {
+        background-color: transparent;
+        color: var(--heroui-primary);
+        border: 1px solid var(--heroui-primary);
+    }
+
+    [data-theme="custom-light"] .button--ghost:hover,
+    [data-theme="custom-light"] .button--ghost[data-hovered="true"] {
+        background-color: var(--heroui-primary);
+        color: var(--heroui-primary-foreground);
+        opacity: 0.9;
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(54, 71, 171, 0.2);
+    }
+
+    /* ---------- DARK THEME BUTTONS ---------- */
+
+    /* Dark Theme Primary */
+    [data-theme="custom-dark"] .button--primary {
+        background-color: var(--heroui-primary);
+        color: var(--heroui-primary-foreground);
+    }
+
+    [data-theme="custom-dark"] .button--primary:hover,
+    [data-theme="custom-dark"] .button--primary[data-hovered="true"] {
+        background-color: color-mix(in srgb, var(--heroui-primary) 90%, black);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(77, 163, 255, 0.3);
+    }
+
+    /* Dark Theme Ghost */
+    [data-theme="custom-dark"] .button--ghost {
+        background-color: transparent;
+        color: var(--heroui-primary);
+        border: 1px solid var(--heroui-primary);
+    }
+
+    [data-theme="custom-dark"] .button--ghost:hover,
+    [data-theme="custom-dark"] .button--ghost[data-hovered="true"] {
+        background-color: var(--heroui-primary);
+        color: var(--heroui-primary-foreground);
+        opacity: 0.9;
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(77, 163, 255, 0.2);
+    }
+
+    /* ---------- SECONDARY BUTTONS ---------- */
+    .button--secondary {
+        background-color: var(--heroui-secondary);
+        color: var(--heroui-secondary-foreground);
+    }
+
+    .button--secondary:hover,
+    .button--secondary[data-hovered="true"] {
+        background-color: color-mix(
+            in srgb,
+            var(--heroui-secondary) 90%,
+            black
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 }

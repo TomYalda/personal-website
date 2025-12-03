@@ -34,7 +34,7 @@ export const options: ISourceOptions = {
         default: OutMode.out,
       },
       random: false,
-      speed: 1,
+      speed: 0.5,
       straight: false,
     },
     number: {
@@ -44,7 +44,7 @@ export const options: ISourceOptions = {
       value: 120,
     },
     opacity: {
-      value: 0.6,
+      value: 0.7, // changes to 0.4 for dark theme as per background.tsx
     },
     shape: {
       type: "image",
