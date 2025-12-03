@@ -21,7 +21,7 @@ export default function NavigationBar() {
     const currentTheme = mounted ? resolvedTheme || theme : "custom-dark";
 
     const navigation = [
-        { title: "Home", link: "/" },
+        { title: "Home", link: "/home" },
         { title: "About Me", link: "/about" },
         { title: "Portfolio", link: "/portfolio" },
         { title: "Progress", link: "/progress" },
@@ -29,9 +29,9 @@ export default function NavigationBar() {
     ];
 
     return (
-        <nav className="w-full flex items-center justify-between p-4 border-b">
+        <nav className="w-full flex items-center justify-between  p-4 sm:p-8">
             <div className="flex items-center">
-                <Link href="/">
+                <Link href="/home">
                     <Image
                         src={
                             currentTheme === "custom-dark"
