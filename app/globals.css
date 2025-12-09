@@ -5,3 +5,11 @@
 @import "./styling/components/buttons.css";
 @import "./styling/components/switch.css";
 
+.font-neon {
+    font-family: var(--font-neon);
+}
+
+.text-glow {
+    text-shadow: 0 0 20px var(--foreground), 0 0 30px var(--foreground),
+        0 0 40px var(--foreground);
+}

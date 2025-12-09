@@ -1,7 +1,7 @@
 @layer components {
-    .switch__control,
-    .switch__thumb,
-    .switch__icon {
+    .switch__control:not(.motion-safe),
+    .switch__thumb:not(.motion-safe),
+    .switch__icon:not(.motion-safe) {
         transition: all 0.3s ease;
     }
     /* ---------- LIGHT THEME SWITCH ---------- */

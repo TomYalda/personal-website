@@ -26,7 +26,7 @@
         --field-shadow: 0 0 0 1px #1018280d inset;
     }
 
-    [data-theme] * {
+    [data-theme] *:not(.motion-safe) {
         transition: all 0.3s ease-in-out;
     }
 
@@ -49,7 +49,7 @@
         --overlay-foreground: #cbd5e1;
 
         --muted: #21242a;
-        --scrollbar: #2c2f36;
+        --scrollbar: #505d8e;
 
         --default: #4da3ff;
         --default-foreground: #0e1117;
@@ -78,7 +78,7 @@
         --overlay-foreground: #1e293b;
 
         --muted: #f1f5f9;
-        --scrollbar: #e2e8f0;
+        --scrollbar: #505d8e;
 
         --default: #364fab;
         --default-foreground: #e9f3ff;
