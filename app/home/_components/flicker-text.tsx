@@ -30,7 +30,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
 
     if (!mounted) {
         return (
-            <p className="font-neon text-9xl text-glow w-full text-center justify-center flex mt-20">
+            <p className="font-neon text-8xl text-glow w-full text-center justify-center flex mt-20">
                 {text}
             </p>
         );
@@ -55,7 +55,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
                             repeatDelay: animation.repeatDelay,
                             repeatType: "loop",
                         }}
-                        className="font-neon text-9xl text-glow inline-block motion-safe"
+                        className="font-neon text-8xl text-glow inline-block motion-safe"
                     >
                         {char === " " ? "\u00A0" : char}
                     </motion.span>

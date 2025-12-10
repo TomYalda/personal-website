@@ -11,23 +11,23 @@ export default function Home() {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <h1 className="text-4xl w-full text-center justify-center flex mt-20">
+            <h1 className="text-3xl w-full text-center justify-center flex">
                 Welcome, my name is
             </h1>
             {theme === "custom-dark" ? (
                 <FlickerText text="TOM YALDA." />
             ) : (
-                <h1 className="font-neon text-9xl w-full text-center justify-center flex mt-20">
+                <h1 className="font-neon text-8xl w-full text-center justify-center flex mt-20">
                     TOM YALDA.
                 </h1>
             )}
-            <h1 className="text-4xl w-full text-center justify-center flex mt-10">
+            <h1 className="text-3xl w-full text-center justify-center flex mt-10">
                 I bring ideas to life through code.
             </h1>
-            <h3 className="text-2xl w-full text-center justify-center flex mt-20 mb-20">
+            <h3 className="text-xl w-full text-center justify-center flex mt-20 mb-20">
                 Software Engineer | Web Developer | Tech Enthusiast
             </h3>
-            <div className="flex flex-row gap-6 mb-40">
+            <div className="flex flex-row gap-6">
                 <Link href="/portfolio" className="flex justify-center">
                     <Button
                         variant="primary"

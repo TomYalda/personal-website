@@ -29,7 +29,7 @@ export default function NavigationBar() {
     ];
 
     return (
-        <nav className="w-full flex items-center justify-between  p-4 sm:p-8">
+        <nav className="w-full flex items-center justify-between p-4 sm:p-8 border-b-2">
             <div className="flex items-center shrink-0">
                 <Link href="/home">
                     <Image
@@ -45,6 +45,7 @@ export default function NavigationBar() {
                     />
                 </Link>
             </div>
+            {/* TODO: MOBILE RESPONSIVENESS - Add sidebar and burger menu when HeroUI integrates it into their component library */}
             <div className="hidden sm:flex items-center gap-4 justify-end">
                 {navigation.map((item) => (
                     <Link key={item.title} href={item.link}>
