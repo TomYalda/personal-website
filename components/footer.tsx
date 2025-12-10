@@ -32,13 +32,12 @@ export default function Footer() {
         },
     ];
     return (
-        <footer className="w-full flex items-center justify-between p-4 sm:p-8">
+        <footer className="w-full flex items-center justify-center md:justify-between p-4 sm:p-8">
             <p className="text-sm text-muted-foreground">
                 &copy; {new Date().getFullYear()} Tom Yalda. All rights
                 reserved.
             </p>
-            {/* TODO: MOBILE RESPONSIVENESS - Concatenate social buttons or make them disappear for mobile view */}
-            <div className="flex items-center gap-4">
+            <div className="hidden items-center gap-4 md:flex">
                 {socials.map((social) => (
                     <Link key={social.name} href={social.href} className="mx-2">
                         <Button

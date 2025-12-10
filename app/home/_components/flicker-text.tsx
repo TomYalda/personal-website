@@ -37,30 +37,39 @@ export default function FlickerText({ text }: FlickerTextProps) {
     }
 
     return (
-        <div className="flex w-full justify-center mt-20">
-            {text.split("").map((char, index) => {
-                const animation = charAnimations[index];
-                if (!animation) return null;
+        <div className="flex flex-wrap w-full justify-center items-center mt-20 gap-x-4">
+            {text.split(" ").map((word, wordIndex) => (
+                <div key={wordIndex} className="flex">
+                    {word.split("").map((char, charIndex) => {
+                        const globalCharIndex =
+                            text.split(" ").slice(0, wordIndex).join(" ")
+                                .length +
+                            (wordIndex > 0 ? 1 : 0) +
+                            charIndex;
+                        const animation = charAnimations[globalCharIndex];
+                        if (!animation) return null;
 
-                return (
-                    <motion.span
-                        key={index}
-                        animate={{
-                            opacity: [1, 0, 1],
-                        }}
-                        transition={{
-                            duration: 0.2,
-                            delay: animation.delay,
-                            repeat: Infinity,
-                            repeatDelay: animation.repeatDelay,
-                            repeatType: "loop",
-                        }}
-                        className="font-neon text-8xl text-glow inline-block motion-safe"
-                    >
-                        {char === " " ? "\u00A0" : char}
-                    </motion.span>
-                );
-            })}
+                        return (
+                            <motion.span
+                                key={`${wordIndex}-${charIndex}`}
+                                animate={{
+                                    opacity: [1, 0, 1],
+                                }}
+                                transition={{
+                                    duration: 0.2,
+                                    delay: animation.delay,
+                                    repeat: Infinity,
+                                    repeatDelay: animation.repeatDelay,
+                                    repeatType: "loop",
+                                }}
+                                className="font-neon text-8xl text-glow inline-block motion-safe"
+                            >
+                                {char}
+                            </motion.span>
+                        );
+                    })}
+                </div>
+            ))}
         </div>
     );
 }
