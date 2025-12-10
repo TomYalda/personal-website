@@ -30,7 +30,7 @@ export default function NavigationBar() {
 
     return (
         <nav className="w-full flex items-center justify-between  p-4 sm:p-8">
-            <div className="flex items-center">
+            <div className="flex items-center shrink-0">
                 <Link href="/home">
                     <Image
                         src={
