@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Image Attributions
 
--   https://www.flaticon.com/authors/vitaly-gorbachev (music note)
+-   https://www.flaticon.com/authors/vitaly-gorbachev (music note, dumbbell)
 -   https://www.flaticon.com/authors/iconsbox (semi-colon)
 -   https://www.flaticon.com/authors/royyan-wijaya (</>)
 -   https://www.flaticon.com/authors/freepik (facebook icon, instagram icon, github icon)

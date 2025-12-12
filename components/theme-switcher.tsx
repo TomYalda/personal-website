@@ -1,29 +1,26 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Switch } from "@heroui/react";
 import { Moon, Sun } from "lucide-react";
+import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 export default function ThemeSwitcher() {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+    const { mounted, currentTheme, setTheme } = useMountedTheme();
 
-    useEffect(() => {
-        const id = requestAnimationFrame(() => setMounted(true))
-        return () => cancelAnimationFrame(id)
-    }, [])
-
-    if (!mounted) return null
+    if (!mounted) return null;
 
     return (
-        <Switch isSelected={theme === "custom-dark"}
-            onChange={(isSelected) => setTheme(isSelected ? "custom-dark" : "custom-light")}
+        <Switch
+            isSelected={currentTheme === "custom-dark"}
+            onChange={(isSelected) =>
+                setTheme(isSelected ? "custom-dark" : "custom-light")
+            }
             className="scale-150 ml-4"
-            size="lg">
+            size="lg"
+        >
             {({ isSelected }) => (
                 <>
-                    <Switch.Control >
+                    <Switch.Control>
                         <Switch.Thumb>
                             <Switch.Icon>
                                 {isSelected ? (
@@ -37,5 +34,5 @@ export default function ThemeSwitcher() {
                 </>
             )}
         </Switch>
-    )
-};
+    );
+}

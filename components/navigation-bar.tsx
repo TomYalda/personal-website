@@ -2,24 +2,15 @@
 
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import ThemeSwitcher from "./theme-switcher";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 import { pageRoutes } from "@/lib/routes";
 import Link from "next/link";
+import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 export default function NavigationBar() {
-    const { theme, resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+    const { currentTheme } = useMountedTheme();
     const pathname = usePathname();
-
-    useEffect(() => {
-        const id = requestAnimationFrame(() => setMounted(true));
-        return () => cancelAnimationFrame(id);
-    }, []);
-
-    const currentTheme = mounted ? resolvedTheme || theme : "custom-dark";
 
     const navigation = [
         { title: "Home", link: pageRoutes.HOME },

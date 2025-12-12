@@ -5,6 +5,7 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { pageRoutes } from "@/lib/routes";
+import SpinningIcon from "@/components/spinning-icon";
 
 export default function Home() {
     return (

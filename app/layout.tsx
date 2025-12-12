@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/providers";
+import { Providers } from "@/lib/providers";
 import Background from "@/components/particle-background/background";
 import NavigationBar from "@/components/navigation-bar";
 import localFont from "next/font/local";
