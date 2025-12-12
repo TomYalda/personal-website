@@ -4,11 +4,11 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { socialMediaLinks } from "@/lib/routes";
 
 export default function Footer() {
-    const { theme } = useTheme();
+    const { theme, resolvedTheme } = useTheme();
     const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
     const socials = [
         {
@@ -32,6 +32,16 @@ export default function Footer() {
             image: "instagram.png",
         },
     ];
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        const id = requestAnimationFrame(() => setMounted(true));
+        return () => cancelAnimationFrame(id);
+    }, []);
+
+    const currentTheme = mounted ? resolvedTheme || theme : "custom-dark";
+
     return (
         <footer className="w-full flex items-center justify-center md:justify-between p-4">
             <p className="text-sm text-muted-foreground">
@@ -50,7 +60,7 @@ export default function Footer() {
                         >
                             <Image
                                 src={`/social-icons/${
-                                    theme === "custom-dark"
+                                    currentTheme === "custom-dark"
                                         ? hoveredSocial === social.name
                                             ? "dark-hover/"
                                             : "dark/"

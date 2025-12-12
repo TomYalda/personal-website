@@ -1,6 +1,6 @@
 "use client";
 
-import FlickerText from "./_components/flicker-text";
+import FlickerText from "../../components/flicker-text";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
