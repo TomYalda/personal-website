@@ -5,6 +5,7 @@ import FlickerText from "./_components/flicker-text";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { pageRoutes } from "@/lib/routes";
 
 export default function Home() {
     const { theme } = useTheme();
@@ -28,7 +29,10 @@ export default function Home() {
                 Software Engineer | Web Developer | Tech Enthusiast
             </h3>
             <div className="flex flex-row gap-6">
-                <Link href="/portfolio" className="flex justify-center">
+                <Link
+                    href={pageRoutes.PORTFOLIO}
+                    className="flex justify-center"
+                >
                     <Button
                         variant="primary"
                         size="lg"
@@ -38,7 +42,10 @@ export default function Home() {
                         Explore my portfolio
                     </Button>
                 </Link>
-                <Link href="/contact" className="flex justify-center">
+                <Link
+                    href={pageRoutes.CONTACT_ME}
+                    className="flex justify-center"
+                >
                     <Button
                         variant="primary"
                         size="lg"

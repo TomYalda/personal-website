@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import { socialMediaLinks } from "@/lib/routes";
 
 export default function Footer() {
     const { theme } = useTheme();
@@ -12,39 +13,40 @@ export default function Footer() {
     const socials = [
         {
             name: "GitHub",
-            href: "https://github.com/TomYalda",
+            href: socialMediaLinks.GITHUB,
             image: "github.png",
         },
         {
             name: "LinkedIn",
-            href: "https://www.linkedin.com/in/tom-yalda",
+            href: socialMediaLinks.LINKEDIN,
             image: "linkedin.png",
         },
         {
             name: "Facebook",
-            href: "https://www.facebook.com/tom.yalda.2025/",
+            href: socialMediaLinks.FACEBOOK,
             image: "facebook.png",
         },
         {
             name: "Instagram",
-            href: "https://www.instagram.com/tom.yalda2/",
+            href: socialMediaLinks.INSTAGRAM,
             image: "instagram.png",
         },
     ];
     return (
-        <footer className="w-full flex items-center justify-center md:justify-between p-4 sm:p-8">
+        <footer className="w-full flex items-center justify-center md:justify-between p-4">
             <p className="text-sm text-muted-foreground">
                 &copy; {new Date().getFullYear()} Tom Yalda. All rights
                 reserved.
             </p>
             <div className="hidden items-center gap-4 md:flex">
                 {socials.map((social) => (
-                    <Link key={social.name} href={social.href} className="mx-2">
+                    <Link key={social.name} href={social.href}>
                         <Button
                             variant="ghost"
                             size="md"
                             onMouseEnter={() => setHoveredSocial(social.name)}
                             onMouseLeave={() => setHoveredSocial(null)}
+                            className="p-4"
                         >
                             <Image
                                 src={`/social-icons/${
@@ -59,6 +61,7 @@ export default function Footer() {
                                 alt={social.name}
                                 width={24}
                                 height={24}
+                                className="object-contain"
                             />
                         </Button>
                     </Link>
