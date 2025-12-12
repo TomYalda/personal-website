@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 type CharAnimation = {
     delay: number;
@@ -15,7 +15,7 @@ type FlickerTextProps = {
 export default function FlickerText({ text }: FlickerTextProps) {
     const [charAnimations, setCharAnimations] = useState<CharAnimation[]>([]);
     const [mounted, setMounted] = useState(false);
-    const { theme } = useTheme();
+    const { currentTheme } = useMountedTheme();
 
     useEffect(() => {
         const generateAnimations = () => {
@@ -51,7 +51,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
                         const animation = charAnimations[globalCharIndex];
                         if (!animation) return null;
 
-                        if (theme !== "custom-dark") {
+                        if (currentTheme !== "custom-dark") {
                             return (
                                 <span
                                     key={`${wordIndex}-${charIndex}`}

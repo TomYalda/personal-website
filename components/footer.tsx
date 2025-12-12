@@ -3,12 +3,12 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { socialMediaLinks } from "@/lib/routes";
+import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 export default function Footer() {
-    const { theme, resolvedTheme } = useTheme();
+    const { currentTheme } = useMountedTheme();
     const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
     const socials = [
         {
@@ -32,15 +32,6 @@ export default function Footer() {
             image: "instagram.png",
         },
     ];
-
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        const id = requestAnimationFrame(() => setMounted(true));
-        return () => cancelAnimationFrame(id);
-    }, []);
-
-    const currentTheme = mounted ? resolvedTheme || theme : "custom-dark";
 
     return (
         <footer className="w-full flex items-center justify-center md:justify-between p-4">
