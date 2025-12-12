@@ -50,7 +50,7 @@ export default function SpinningIcon() {
             src={icons[index]}
             animate={controls}
             initial={{ scale: 0, opacity: 0 }}
-            className="w-32 h-32 motion-safe"
+            className="w-32 h-32 motion-safe m-16"
         />
     );
 }
