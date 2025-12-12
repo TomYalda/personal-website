@@ -1,7 +1,7 @@
 @layer components {
-    .button--primary,
-    .button--secondary,
-    .button--ghost {
+    .button--primary:not(.motion-safe),
+    .button--secondary:not(.motion-safe),
+    .button--ghost:not(.motion-safe) {
         transition: all 0.3s ease;
     }
 
