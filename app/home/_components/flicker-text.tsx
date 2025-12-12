@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 type CharAnimation = {
     delay: number;
@@ -14,6 +15,7 @@ type FlickerTextProps = {
 export default function FlickerText({ text }: FlickerTextProps) {
     const [charAnimations, setCharAnimations] = useState<CharAnimation[]>([]);
     const [mounted, setMounted] = useState(false);
+    const { theme } = useTheme();
 
     useEffect(() => {
         const generateAnimations = () => {
@@ -30,7 +32,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
 
     if (!mounted) {
         return (
-            <p className="font-neon text-8xl text-glow w-full text-center justify-center flex mt-20">
+            <p className="font-neon text-8xl w-full text-center justify-center flex mt-20">
                 {text}
             </p>
         );
@@ -49,6 +51,17 @@ export default function FlickerText({ text }: FlickerTextProps) {
                         const animation = charAnimations[globalCharIndex];
                         if (!animation) return null;
 
+                        if (theme !== "custom-dark") {
+                            return (
+                                <span
+                                    key={`${wordIndex}-${charIndex}`}
+                                    className="font-neon text-8xl"
+                                >
+                                    {char}
+                                </span>
+                            );
+                        }
+
                         return (
                             <motion.span
                                 key={`${wordIndex}-${charIndex}`}
@@ -62,7 +75,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
                                     repeatDelay: animation.repeatDelay,
                                     repeatType: "loop",
                                 }}
-                                className="font-neon text-8xl text-glow inline-block motion-safe"
+                                className="font-neon text-8xl text-glow motion-safe"
                             >
                                 {char}
                             </motion.span>
