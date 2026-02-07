@@ -23,24 +23,45 @@ export default function ContactForm() {
         setIsLoading(true);
         e.preventDefault();
         if (formRef.current) {
-            const result = await sendEmail(
-                "personal_gmail",
-                "personal_contact_me",
-                formRef.current,
-                "3CFqOlgZaUb9HiZp8"
-            );
-            if (result) {
-                formRef.current.reset();
-                toast.success("Message sent successfully!", {
-                    theme: currentTheme,
+            try {
+                const result = await sendEmail(
+                    "personal_gmail",
+                    "personal_contact_me",
+                    formRef.current,
+                    "3CFqOlgZaUb9HiZp8"
+                );
+                if (result) {
+                    formRef.current.reset();
+                    toast.success(
+                        "Message sent to " +
+                            formRef.current.email.value +
+                            "! Check inbox for autoresponder email.",
+                        {
+                            theme:
+                                currentTheme === "custom-dark"
+                                    ? "dark"
+                                    : "light",
+                        }
+                    );
+                } else {
+                    toast.error(
+                        "Failed to send message. Please try again later.",
+                        {
+                            theme:
+                                currentTheme === "custom-dark"
+                                    ? "dark"
+                                    : "light",
+                        }
+                    );
+                }
+            } catch (error) {
+                toast.error(`${error}`, {
+                    theme: currentTheme === "custom-dark" ? "dark" : "light",
                 });
-            } else {
-                toast.error("Failed to send message. Please try again later.", {
-                    theme: currentTheme,
-                });
+            } finally {
+                setIsLoading(false);
             }
         }
-        setIsLoading(false);
     };
 
     return (
@@ -127,6 +148,30 @@ export default function ContactForm() {
                 </Button>
                 <Button type="reset" variant="ghost" isDisabled={isLoading}>
                     Reset
+                </Button>
+                <Button
+                    onClick={() =>
+                        toast.success("This is a success message!", {
+                            theme:
+                                currentTheme === "custom-dark"
+                                    ? "dark"
+                                    : "light",
+                        })
+                    }
+                >
+                    Show Success Toast
+                </Button>
+                <Button
+                    onClick={() =>
+                        toast.error("This is an error message!", {
+                            theme:
+                                currentTheme === "custom-dark"
+                                    ? "dark"
+                                    : "light",
+                        })
+                    }
+                >
+                    Show Error Toast
                 </Button>
             </div>
         </form>

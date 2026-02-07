@@ -44,8 +44,8 @@ export default function RootLayout({
                         rtl={false}
                         pauseOnFocusLoss={false}
                         draggable
-                        pauseOnHover={false}
-                        theme="light"
+                        pauseOnHover={true}
+                        theme="dark"
                         transition={Slide}
                     />
                     <div className="relative w-full h-screen bg-background flex flex-col">

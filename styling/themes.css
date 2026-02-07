@@ -102,3 +102,35 @@
         transition: none !important;
     }
 }
+
+/* ---------- REACT-TOASTIFY OVERRIDES (UNLAYERED) ---------- */
+.Toastify__toast {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Toastify__close-button {
+    opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+    opacity: 1;
+}
+
+.Toastify__toast-theme--dark,
+.Toastify__toast-theme--light {
+    background: var(--surface);
+    color: var(--surface-foreground);
+    border: 1px solid var(--muted);
+    box-shadow: var(--overlay-shadow);
+}
+
+.Toastify__toast-theme--dark .Toastify__toast-body,
+.Toastify__toast-theme--light .Toastify__toast-body {
+    color: var(--surface-foreground);
+}
+
+.Toastify__toast-theme--dark .Toastify__close-button,
+.Toastify__toast-theme--light .Toastify__close-button {
+    color: var(--surface-foreground);
+}
