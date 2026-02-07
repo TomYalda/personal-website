@@ -4,6 +4,7 @@
 @import "./styling/themes.css";
 @import "./styling/components/buttons.css";
 @import "./styling/components/switch.css";
+@import "./styling/components/form.css";
 
 .font-neon {
     font-family: var(--font-neon);
