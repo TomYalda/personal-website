@@ -6,6 +6,7 @@
 @import "../styling/components/buttons.css";
 @import "../styling/components/switch.css";
 @import "../styling/components/form.css";
+@import "../styling/components/listbox-item.css";
 
 .font-neon {
     font-family: var(--font-neon);

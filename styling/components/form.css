@@ -12,11 +12,7 @@
     /* Light Theme Input & TextArea */
     [data-theme="custom-light"] input,
     [data-theme="custom-light"] textarea {
-        background-color: color-mix(
-            in srgb,
-            var(--surface) 95%,
-            black
-        ) !important;
+        background-color: var(--overlay) !important;
         color: var(--heroui-foreground) !important;
         border: none !important;
     }
@@ -57,11 +53,7 @@
     /* Dark Theme Input & TextArea */
     [data-theme="custom-dark"] input,
     [data-theme="custom-dark"] textarea {
-        background-color: color-mix(
-            in srgb,
-            var(--surface) 95%,
-            white
-        ) !important;
+        background-color: var(--overlay) !important;
         color: var(--heroui-foreground) !important;
         border: none !important;
     }
@@ -101,20 +93,12 @@
 
     [data-theme="custom-light"] input:hover,
     [data-theme="custom-light"] textarea:hover {
-        background-color: color-mix(
-            in srgb,
-            var(--surface) 90%,
-            black
-        ) !important;
+        background-color: var(--background) !important;
     }
 
     [data-theme="custom-dark"] input:hover,
     [data-theme="custom-dark"] textarea:hover {
-        background-color: color-mix(
-            in srgb,
-            var(--surface) 90%,
-            white
-        ) !important;
+        background-color: var(--background) !important;
     }
 
     /* ---------- ERROR STATES ---------- */

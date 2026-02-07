@@ -4,34 +4,12 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { socialMediaLinks } from "@/lib/routes";
+import { SOCIALS } from "@/constants/socials";
 import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 export default function Footer() {
     const { currentTheme } = useMountedTheme();
     const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
-    const socials = [
-        {
-            name: "GitHub",
-            href: socialMediaLinks.GITHUB,
-            image: "github.png",
-        },
-        {
-            name: "LinkedIn",
-            href: socialMediaLinks.LINKEDIN,
-            image: "linkedin.png",
-        },
-        {
-            name: "Facebook",
-            href: socialMediaLinks.FACEBOOK,
-            image: "facebook.png",
-        },
-        {
-            name: "Instagram",
-            href: socialMediaLinks.INSTAGRAM,
-            image: "instagram.png",
-        },
-    ];
 
     return (
         <footer className="w-full flex items-center justify-center md:justify-between p-4">
@@ -40,7 +18,7 @@ export default function Footer() {
                 reserved.
             </p>
             <div className="hidden items-center gap-4 md:flex">
-                {socials.map((social) => (
+                {SOCIALS.map((social) => (
                     <Link key={social.name} href={social.href}>
                         <Button
                             variant="ghost"
