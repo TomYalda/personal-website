@@ -8,10 +8,12 @@ import EmailColumn from "./email-column";
 
 export default function ContactClientPage() {
     return (
-        <div className="flex flex-col items-center justify-center w-full gap-6">
+        <div className="flex w-full flex-col items-center justify-center gap-6">
             <FlickerText text="CONTACT ME" />
-            <Card className="flex max-w-4xl flex-col items-center justify-center gap-6 rounded-lg p-6 md:flex-row">
-                <ContactForm />
+            <Card className="flex w-full max-w-5xl flex-col items-stretch justify-center gap-6 rounded-lg p-6 md:flex-row">
+                <div className="w-full md:flex-6">
+                    <ContactForm />
+                </div>
                 <Separator
                     orientation="horizontal"
                     className="w-full md:hidden"
@@ -20,7 +22,7 @@ export default function ContactClientPage() {
                     orientation="vertical"
                     className="hidden h-auto self-stretch md:block"
                 />
-                <div className="flex flex-col gap-6">
+                <div className="flex w-full flex-col gap-6 md:flex-5">
                     <EmailColumn />
                     <Separator
                         orientation="horizontal"

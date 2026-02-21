@@ -58,8 +58,10 @@ export default function RootLayout({
                             <header className="shrink-0 z-20">
                                 <NavigationBar />
                             </header>
-                            <main className="flex-1 overflow-y-auto p-8 sm:p-16">
-                                {children}
+                            <main className="flex-1 overflow-y-auto p-4 md:p-8">
+                                <div className="flex min-h-full w-full flex-col items-center justify-center">
+                                    {children}
+                                </div>
                             </main>
                             <footer className="shrink-0 z-20">
                                 <Footer />

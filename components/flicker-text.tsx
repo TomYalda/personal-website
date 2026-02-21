@@ -32,14 +32,14 @@ export default function FlickerText({ text }: FlickerTextProps) {
 
     if (!mounted) {
         return (
-            <p className="font-neon text-8xl w-full text-center justify-center flex mt-20">
+            <p className="font-neon text-7xl w-full text-center justify-center flex md:text-8xl">
                 {text}
             </p>
         );
     }
 
     return (
-        <div className="flex flex-wrap w-full justify-center items-center mt-20 gap-x-4">
+        <div className="flex flex-wrap w-full justify-center items-center gap-x-4">
             {text.split(" ").map((word, wordIndex) => (
                 <div key={wordIndex} className="flex">
                     {word.split("").map((char, charIndex) => {
@@ -55,7 +55,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
                             return (
                                 <span
                                     key={`${wordIndex}-${charIndex}`}
-                                    className="font-neon text-8xl"
+                                    className="font-neon text-7xl md:text-8xl"
                                 >
                                     {char}
                                 </span>
@@ -75,7 +75,7 @@ export default function FlickerText({ text }: FlickerTextProps) {
                                     repeatDelay: animation.repeatDelay,
                                     repeatType: "loop",
                                 }}
-                                className="font-neon text-8xl text-glow motion-safe"
+                                className="font-neon text-7xl md:text-8xl text-glow motion-safe"
                             >
                                 {char}
                             </motion.span>

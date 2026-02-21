@@ -28,7 +28,7 @@ export default function ContactForm() {
                     "personal_gmail",
                     "personal_contact_me",
                     formRef.current,
-                    "3CFqOlgZaUb9HiZp8"
+                    "3CFqOlgZaUb9HiZp8",
                 );
                 if (result) {
                     formRef.current.reset();
@@ -41,7 +41,7 @@ export default function ContactForm() {
                                 currentTheme === "custom-dark"
                                     ? "dark"
                                     : "light",
-                        }
+                        },
                     );
                 } else {
                     toast.error(
@@ -51,7 +51,7 @@ export default function ContactForm() {
                                 currentTheme === "custom-dark"
                                     ? "dark"
                                     : "light",
-                        }
+                        },
                     );
                 }
             } catch (error) {
@@ -65,11 +65,11 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex w-full flex-col items-center justify-center p-6 gap-4">
             <h2 className="text-2xl mb-4">Use the contact form,</h2>
             <form
                 ref={formRef}
-                className="flex w-96 flex-col gap-4"
+                className="flex w-full flex-col gap-4"
                 onSubmit={onSubmit}
             >
                 {/* Full Name Field */}
@@ -95,7 +95,7 @@ export default function ContactForm() {
                     validate={(value) => {
                         if (
                             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                                value
+                                value,
                             )
                         ) {
                             return "Please enter a valid email address";
