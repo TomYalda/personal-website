@@ -1,0 +1,111 @@
+@layer components {
+    /* ---------- FORM TRANSITIONS ---------- */
+    input:not(.motion-safe),
+    textarea:not(.motion-safe),
+    label:not(.motion-safe),
+    [data-slot="description"]:not(.motion-safe) {
+        transition: all 0.3s ease;
+    }
+
+    /* ---------- LIGHT THEME FORM ---------- */
+
+    /* Light Theme Input & TextArea */
+    [data-theme="custom-light"] input,
+    [data-theme="custom-light"] textarea {
+        background-color: var(--overlay) !important;
+        color: var(--heroui-foreground) !important;
+        border: none !important;
+    }
+
+    [data-theme="custom-light"] input::placeholder,
+    [data-theme="custom-light"] textarea::placeholder {
+        color: color-mix(
+            in srgb,
+            var(--heroui-foreground) 50%,
+            transparent
+        ) !important;
+    }
+
+    [data-theme="custom-light"] input:focus,
+    [data-theme="custom-light"] textarea:focus {
+        outline: 2px solid var(--heroui-primary) !important;
+        outline-offset: -2px !important;
+        box-shadow: 0 0 0 2px
+            color-mix(in srgb, var(--heroui-primary) 20%, transparent) !important;
+    }
+
+    /* Light Theme Labels */
+    [data-theme="custom-light"] label {
+        color: var(--surface-foreground) !important;
+    }
+
+    /* Light Theme Description */
+    [data-theme="custom-light"] [data-slot="description"] {
+        color: color-mix(
+            in srgb,
+            var(--surface-foreground) 70%,
+            transparent
+        ) !important;
+    }
+
+    /* ---------- DARK THEME FORM ---------- */
+
+    /* Dark Theme Input & TextArea */
+    [data-theme="custom-dark"] input,
+    [data-theme="custom-dark"] textarea {
+        background-color: var(--overlay) !important;
+        color: var(--heroui-foreground) !important;
+        border: none !important;
+    }
+
+    [data-theme="custom-dark"] input::placeholder,
+    [data-theme="custom-dark"] textarea::placeholder {
+        color: color-mix(
+            in srgb,
+            var(--heroui-foreground) 60%,
+            transparent
+        ) !important;
+    }
+
+    [data-theme="custom-dark"] input:focus,
+    [data-theme="custom-dark"] textarea:focus {
+        outline: 2px solid var(--heroui-primary) !important;
+        outline-offset: -2px !important;
+        box-shadow: 0 0 0 2px
+            color-mix(in srgb, var(--heroui-primary) 30%, transparent) !important;
+    }
+
+    /* Dark Theme Labels */
+    [data-theme="custom-dark"] label {
+        color: var(--surface-foreground) !important;
+    }
+
+    /* Dark Theme Description */
+    [data-theme="custom-dark"] [data-slot="description"] {
+        color: color-mix(
+            in srgb,
+            var(--surface-foreground) 70%,
+            transparent
+        ) !important;
+    }
+
+    /* ---------- FORM HOVER EFFECTS ---------- */
+
+    [data-theme="custom-light"] input:hover,
+    [data-theme="custom-light"] textarea:hover {
+        background-color: var(--background) !important;
+    }
+
+    [data-theme="custom-dark"] input:hover,
+    [data-theme="custom-dark"] textarea:hover {
+        background-color: var(--background) !important;
+    }
+
+    /* ---------- ERROR STATES ---------- */
+
+    input[aria-invalid="true"],
+    textarea[aria-invalid="true"] {
+        outline: 2px solid var(--heroui-danger) !important;
+        outline-offset: -2px !important;
+    }
+}

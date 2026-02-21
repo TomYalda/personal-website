@@ -10,7 +10,7 @@ import FlickerText from "@/components/flicker-text";
 export default function NotFound() {
     const router = useRouter();
     return (
-        <div className="flex flex-col items-center justify-center w-full h-full gap-16">
+        <div className="flex flex-col items-center justify-center gap-16">
             <FlickerText text="PAGE NOT FOUND" />
             <h1 className="text-3xl w-full text-center justify-center flex gap-4 flex-col">
                 Nothing to see here...

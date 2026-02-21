@@ -1,9 +1,12 @@
 @layer theme, base, components, utilities;
 @import "tailwindcss";
 @import "@heroui/styles";
-@import "./styling/themes.css";
-@import "./styling/components/buttons.css";
-@import "./styling/components/switch.css";
+@import "react-toastify/dist/ReactToastify.css";
+@import "../styling/themes.css";
+@import "../styling/components/buttons.css";
+@import "../styling/components/switch.css";
+@import "../styling/components/form.css";
+@import "../styling/components/listbox-item.css";
 
 .font-neon {
     font-family: var(--font-neon);
