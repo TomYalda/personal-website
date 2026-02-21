@@ -3,8 +3,10 @@ import { Mail } from "lucide-react";
 
 export default function EmailColumn() {
     return (
-        <Card className="items-center justify-center gap-4 rounded-lg p-6">
-            <h2 className="text-2xl mb-4">Email me directly,</h2>
+        <Card className="items-center justify-center gap-4 rounded-lg border-none p-6 shadow-none">
+            <h2 className="mb-4 w-full text-center text-2xl">
+                Email me directly,
+            </h2>
             <div className="flex w-full md:block">
                 <ListBox
                     aria-label="Social links"
