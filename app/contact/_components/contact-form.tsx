@@ -13,11 +13,27 @@ import { sendEmail } from "@/services/email-service";
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { useMountedTheme } from "@/hooks/use-mounted-theme";
+import validator from "validator";
+import Mailcheck from "mailcheck";
 
 export default function ContactForm() {
     const formRef = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState(false);
     const { currentTheme } = useMountedTheme();
+
+    const validateEmail = (email: string) => {
+        if (email.trim().length === 0) {
+            return "I gotta know where you're coming from..";
+        }
+        if (!validator.isEmail(email)) {
+            return "That email doesn't seem valid...";
+        }
+        const suggestion = Mailcheck.run({ email });
+        if (suggestion) {
+            return `Did you mean ${suggestion.full}?`;
+        }
+        return null;
+    };
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         setIsLoading(true);
@@ -80,7 +96,7 @@ export default function ContactForm() {
                     type="text"
                     validate={(value) => {
                         if (value.trim().length === 0) {
-                            return "Full name is required";
+                            return "I gotta know who you are...";
                         }
                         return null;
                     }}
@@ -94,16 +110,7 @@ export default function ContactForm() {
                 <TextField
                     name="email"
                     type="email"
-                    validate={(value) => {
-                        if (
-                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                                value,
-                            )
-                        ) {
-                            return "Please enter a valid email address";
-                        }
-                        return null;
-                    }}
+                    validate={(value) => validateEmail(value)}
                 >
                     <Label>Email</Label>
                     <Input placeholder="Please enter a valid email address..." />
@@ -119,7 +126,7 @@ export default function ContactForm() {
                     type="text"
                     validate={(value) => {
                         if (value.trim().length === 0) {
-                            return "Title is required";
+                            return "You gotta give your message a title...";
                         }
                         return null;
                     }}
