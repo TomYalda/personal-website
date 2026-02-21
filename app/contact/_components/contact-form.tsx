@@ -33,7 +33,7 @@ export default function ContactForm() {
                 if (result) {
                     formRef.current.reset();
                     toast.success(
-                        "Message sent to " +
+                        "Message successfully sent from " +
                             formRef.current.email.value +
                             "! Check inbox for autoresponder email.",
                         {
@@ -66,7 +66,9 @@ export default function ContactForm() {
 
     return (
         <div className="flex w-full flex-col items-center justify-center p-6 gap-4">
-            <h2 className="text-2xl mb-4">Use the contact form,</h2>
+            <h2 className="mb-4 w-full text-center text-2xl">
+                Use the contact form,
+            </h2>
             <form
                 ref={formRef}
                 className="flex w-full flex-col gap-4"
